@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovelaceliberty</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/owl-carousel.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" href="images/favicon.png">
+    <meta property="og:image" content="images/logo.svg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="dashboardBg loginBg">
+   
+   <section class="dashboard position-relative p-0 p-md-3 justify-content-center w-100">
+   
+            <div class="container h-100 d-flex align-items-center justify-content-center w-100">
+                <div class="row w-100 justify-content-center">
+                    <div class="col-12 col-md-7">
+                        <div class="mfacard  mx-auto d-flex p-3 px-md-5 py-md-4">
+                            <div class="row">
+                                <div class="col-12 text-center d-flex justify-content-center mb-4">
+                                    <a href="index.html" class="account-logo">
+                                        <img class="darkLogo" src="images/logo.svg" alt="logo"><img class="lightLogo" src="images/logo2.svg" alt="logo">
+                                    </a>
+                                </div>
+                                <div class="col-12">
+                                    <h4 class="text-white pageTitle mb-4">sign-up</h4>
+                                    <form action="subscribe.html" class="row g-2">
+                                            <div class="col-6 col-md-4">
+                                                <input type="text" class="form-control themeInput" name="firstName" placeholder="First Name">
+                                            </div>
+                                            <div class="col-6 col-md-4">
+                                                <input type="text" class="form-control themeInput" name="lastName" placeholder="Last Name">
+                                            </div>
+                                    
+                                            <div class="col-12 col-md-4">
+                                                <input type="email" class="form-control themeInput" name="email" placeholder="Email">
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <input type="tel" class="form-control themeInput" name="phone" placeholder="Phone #">
+                                            </div>
+                                    
+                                        <!-- Third Line: Birthday -->
+                                        <div class="col-12 col-md-4">
+                                            <input type="date" class="form-control themeInput" name="birthday" placeholder="Birthday">
+                                        </div>
+                                            <div class="col-12 col-md-4">
+                                                <input type="text" class="form-control themeInput" name="username" placeholder="Username">
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <input type="password" class="form-control themeInput mb-3" name="password" placeholder="Password">
+                                            
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <p class="themeColor mt-2">Provisioned accounts available: <strong>132</strong></p>
+                                            </div>
+                                        <!-- Subscription Options and Submit Button -->
+                                        <div class="col-12 col-md-12">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <label class="form-label">Subscription Option:</label>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <div>
+                                                        <input type="radio" name="subscription" value="none" id="noSubscription">
+                                                        <label for="noSubscription"> No Subscription</label><br>
+                                                        <input type="radio" name="subscription" value="provisioned" id="provisioned">
+                                                        <label for="provisioned"> Provisioned</label><br>
+                                                        <input type="radio" name="subscription" value="monthly" id="monthly">
+                                                        <label for="monthly"> $2 per month</label>
+                                                        <div>
+                                                            <input type="checkbox" name="provisionOthers" id="provisionOthers">
+                                                            <label for="provisionOthers"> Provision accounts for others</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 d-flex justify-content-end align-items-end">
+                                                    
+                                                    <button type="submit" class="theme-btn ">Sign Up</button>
+
+                                                </div>
+                                            </div>
+                                        
+                                        
+                                        </div>
+                                    
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+    
+   </section>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/owl-carousel.js"></script>
+    <script src="js/custom.js"></script>
+<script>$('.tdnn').click(function () {
+  $("body").toggleClass('light');
+  $(".moon").toggleClass('sun');
+  $(".tdnn").toggleClass('day');
+});</script>
+<script>$(document).ready(function () {
+    // Initialize variables outside to maintain state
+    const themeToggleButton = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    let isMoon = true;
+
+    // Check localStorage for theme preference
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+
+    // Apply the stored theme on page load
+    if (currentTheme === 'light') {
+        $('body').addClass('light-theme');
+        $('.mfacard').addClass('light');
+        $('.themeInput').addClass('borderColor');
+        $('.pageTitle').addClass('text-black').removeClass('text-white');
+        $('p').addClass('text-black').removeClass('text-white');
+        $('label').addClass('text-black').removeClass('text-white');
+        $('.sidebar').addClass('light-sidebar');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        isMoon = false;
+    }
+
+    // Toggle theme on button click
+    $(themeToggleButton).click(function () {
+        $('body').toggleClass('light-theme'); // Toggle light theme for body
+        $('.mfacard').toggleClass('light'); // Toggle light class for card
+        $('.themeInput').toggleClass('borderColor'); // Toggle border color for input
+        $('.pageTitle').toggleClass('text-black text-white'); // Toggle text color for page title
+        $('p').toggleClass('text-black text-white'); // Toggle text color for paragraphs
+        $('label').toggleClass('text-black text-white'); // Toggle text color for labels
+        $('.sidebar').toggleClass('light-sidebar'); // Toggle sidebar background color
+
+        // Update theme icon
+        if (isMoon) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            isMoon = false;
+            localStorage.setItem('theme', 'light'); // Store light theme preference
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            isMoon = true;
+            localStorage.setItem('theme', 'dark'); // Store dark theme preference
+        }
+    });
+});
+</script>
+</body>
+</html>

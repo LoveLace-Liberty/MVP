@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovelaceliberty</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/owl-carousel.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" href="images/favicon.png">
+    <meta property="og:image" content="images/logo.svg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="dashboardBg loginBg">
+   
+   <section class="dashboard position-relative p-3 justify-content-between w-100" >
+   
+        <div class="main h-100 w-100">
+            <div class="container h-100 d-flex align-items-center w-100">
+                <div class="row align-items-center d-flex w-100 justify-content-center">
+                    <div class="col-12 col-md-4">
+                        <div class="mfacard  mx-auto d-flex p-3 p-md-5">
+                            <div class="row">
+                                <div class="col-12 text-center d-flex justify-content-center mb-4">
+                                    <a href="index.html" class="account-logo">
+                                        <img class="darkLogo" src="images/logo.svg" alt="logo"><img class="lightLogo" src="images/logo2.svg" alt="logo">
+                                    </a>
+                                </div>
+                                <div class="col-12">
+                                    <h4 class="text-white pageTitle mb-3">Login</h4>
+                                    <form action="index.html">
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">Username</label>
+                                            <input type="text" id="username" class="form-control themeInput" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" id="password" class="form-control themeInput" required>
+                                        </div>
+                                        <button type="submit" class="theme-btn mb-3 w-100">Login</button>
+                                        <div class="text-center">
+                                            <a href="sign-up.html" class="themeColor text-decoration-none themeLink">Don't have an account?</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-12 col-md-6 d-none d-md-flex">
+                        <img src="images/usa-map.png" class="w-100" alt="">
+                    </div> -->
+                </div>
+                
+            </div>
+        </div>
+    
+   </section>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/owl-carousel.js"></script>
+    <script src="js/custom.js"></script>
+<script>$('.tdnn').click(function () {
+  $("body").toggleClass('light');
+  $(".moon").toggleClass('sun');
+  $(".tdnn").toggleClass('day');
+});</script>
+<script>$(document).ready(function () {
+    // Initialize variables outside to maintain state
+    const themeToggleButton = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    let isMoon = true;
+
+    // Check localStorage for theme preference
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+
+    // Apply the stored theme on page load
+    if (currentTheme === 'light') {
+        $('body').addClass('light-theme');
+        $('.mfacard').addClass('light');
+        $('.themeInput').addClass('borderColor');
+        $('.pageTitle').addClass('text-black').removeClass('text-white');
+        $('p').addClass('text-black').removeClass('text-white');
+        $('label').addClass('text-black').removeClass('text-white');
+        $('.sidebar').addClass('light-sidebar');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        isMoon = false;
+    }
+
+    // Toggle theme on button click
+    $(themeToggleButton).click(function () {
+        $('body').toggleClass('light-theme'); // Toggle light theme for body
+        $('.mfacard').toggleClass('light'); // Toggle light class for card
+        $('.themeInput').toggleClass('borderColor'); // Toggle border color for input
+        $('.pageTitle').toggleClass('text-black text-white'); // Toggle text color for page title
+        $('p').toggleClass('text-black text-white'); // Toggle text color for paragraphs
+        $('label').toggleClass('text-black text-white'); // Toggle text color for labels
+        $('.sidebar').toggleClass('light-sidebar'); // Toggle sidebar background color
+
+        // Update theme icon
+        if (isMoon) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            isMoon = false;
+            localStorage.setItem('theme', 'light'); // Store light theme preference
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            isMoon = true;
+            localStorage.setItem('theme', 'dark'); // Store dark theme preference
+        }
+    });
+});
+</script>
+</body>
+</html>
